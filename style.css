@@ -1,0 +1,163 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #1a202c; /* Warna hitam gelap untuk body */
+    scroll-behavior: smooth; /* Untuk scroll yang lancar */
+}
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: 0.5rem; /* rounded-lg */
+}
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.card {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15); /* Bayangan yang lebih ketara */
+}
+/* Gaya untuk butang kembali ke atas */
+#backToTopBtn {
+    display: none; /* Sembunyikan secara lalai */
+    position: fixed; /* Kekal di tempat yang sama */
+    bottom: 20px; /* 20px dari bawah */
+    right: 30px; /* 30px dari kanan */
+    z-index: 99; /* Pastikan ia di atas elemen lain */
+    border: none; /* Buang sempadan */
+    outline: none; /* Buang garis luar */
+    background-color: #1a73e8; /* Warna latar belakang */
+    color: white; /* Warna teks */
+    cursor: pointer; /* Kursor penunjuk */
+    padding: 15px; /* Padding */
+    border-radius: 50%; /* Bulat */
+    font-size: 18px; /* Saiz fon */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease-in-out;
+}
+#backToTopBtn:hover {
+    background-color: #0d47a1; /* Warna latar belakang apabila hover */
+}
+
+/* Gaya untuk kelipan dan lencana LIVE */
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.live-event {
+    animation: blink 1.5s infinite;
+    border: 3px solid #ef4444; /* Sempadan merah untuk menyerlahkan */
+    box-shadow: 0 0 15px rgba(239, 68, 68, 0.6); /* Bayangan merah untuk menyerlahkan */
+}
+
+.live-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: #ef4444; /* Warna merah */
+    color: white;
+    font-weight: bold;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px; /* Bulat penuh */
+    font-size: 0.875rem; /* text-sm */
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Gaya untuk Modal */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 100; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    width: 80%;
+    max-width: 500px;
+    position: relative;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+@keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Gaya untuk video latar belakang Hero Section */
+.hero-video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1; /* Letakkan di belakang kandungan */
+}
+
+.hero-video-background iframe {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Pastikan video meliputi keseluruhan ruang */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Pusatkan video */
+    min-width: 135%; /* Increased for larger effect */
+    min-height: 135%; /* Increased for larger effect */
+    /* Cuba sembunyikan elemen YouTube yang mungkin muncul pada hover */
+    pointer-events: none; /* Matikan interaksi tetikus pada iframe */
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Lapisan gelap untuk teks mudah dibaca */
+    z-index: 0; /* Di atas video, di bawah teks */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1; /* Pastikan teks di atas overlay */
+}

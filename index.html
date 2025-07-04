@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semua Acara & Live Stream - Tinta Sports Day 2025</title>
+    <!-- Memuatkan Tailwind CSS dari CDN untuk gaya yang cepat dan responsif -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Jika diasingkan, pautkan ke fail CSS di sini -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="bg-gray-900 text-white p-4 shadow-lg">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+            <a href="#" class="flex items-center mb-4 md:mb-0">
+                <!-- Placeholder image for logo with onerror fallback -->
+                <img src="img/logosportsday.png"
+                     onerror="this.onerror=null;this.src='https://placehold.co/80x80/000000/FFFFFF?text=Logo';"
+                     alt="Tinta Sports Day 2025 Logo"
+                     class="h-16 w-16 rounded-full mr-3 border-2 border-white" />
+                <span class="text-3xl font-extrabold tracking-tight">Tinta Sports Day 2025</span>
+            </a>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="#live" class="text-gray-300 hover:text-white transition-colors text-lg font-medium">Live Stream</a></li>
+                    <li><a href="#acara" class="text-gray-300 hover:text-white transition-colors text-lg font-medium">Semua Acara</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative text-white py-20 px-4 text-center shadow-inner overflow-hidden">
+        <!-- Video Latar Belakang -->
+        <div class="hero-video-background">
+            <!-- Pautan YouTube yang spesifik untuk latar belakang Pre-Event -->
+            <!-- Parameter:
+                 autoplay=1: Main automatik
+                 mute=1: Bisukan audio
+                 loop=1: Ulang video
+                 playlist=sPNWblZj4wI: Diperlukan untuk loop berfungsi dengan satu video
+                 controls=0: Sembunyikan kawalan pemain
+                 modestbranding=1: Kurangkan jenama YouTube
+                 disablekb=1: Lumpuhkan kawalan papan kekunci
+                 iv_load_policy=3: Sembunyikan anotasi video
+            -->
+            <iframe
+                src="https://www.youtube.com/embed/sPNWblZj4wI?autoplay=1&mute=1&loop=1&playlist=sPNWblZj4wI&controls=0&modestbranding=1&disablekb=1&iv_load_policy=3"
+                frameborder="0"
+                allow="autoplay; encrypted-media"
+                allowfullscreen
+                title=""> <!-- Atribut title dikosongkan -->
+            </iframe>
+        </div>
+        <!-- Overlay untuk teks mudah dibaca -->
+        <div class="video-overlay"></div>
+
+        <div class="container mx-auto hero-content">
+            <h1 class="text-5xl md:text-6xl font-extrabold mb-4 animate-fade-in-down text-white">Pre-Event</h1>
+            <p class="text-xl md:text-2xl mb-8 opacity-90 animate-fade-in-up">Saksikan aksi langsung dan jadual penuh acara sukan.</p>
+            <a href="#" id="watchLiveBtn" class="bg-white text-blue-700 hover:bg-gray-100 px-8 py-4 rounded-full text-lg font-bold shadow-lg transform transition-transform hover:scale-105 inline-block">Tonton Live Sekarang</a>
+        </div>
+    </section>
+
+    <main class="container mx-auto py-12 px-4">
+        <!-- Live Stream Acara Section -->
+        <section id="live" class="mb-12">
+            <h2 class="text-4xl font-bold mb-8 text-center text-white" id="live-section-title">Sedang Berlangsung</h2>
+            <div id="live-stream-container" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Live stream cards will be injected here by JavaScript -->
+            </div>
+            <!-- Nota placeholder telah dialih keluar -->
+        </section>
+
+        <!-- Semua Acara Section -->
+        <section id="acara">
+            <h2 class="text-4xl font-bold mb-8 text-center text-white">Jadual Perlawanan</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Acara Lengkap 1 -->
+                <div class="bg-white rounded-lg shadow-xl p-6 card relative">
+                    <p class="text-blue-600 text-3xl font-bold mb-2 event-date">11 OGOS</p>
+                    <h3 class="text-2xl font-semibold mb-2 event-name text-gray-800">Dodgeball</h3>
+                    <p class="text-gray-600 mb-2">Dewan Eksplorasi, Sekolah Tinta</p>
+                    <p class="text-gray-700 font-medium">Masa: 8:30 Pagi - 1:00 Petang</p>
+                    <span class="live-badge hidden">LIVE</span>
+                    <button class="generate-summary-btn mt-4 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full shadow-md transition-colors w-full">✨ Ringkasan Acara</button>
+                </div>
+
+                <!-- Acara Lengkap 2 -->
+                <div class="bg-white rounded-lg shadow-xl p-6 card relative">
+                    <p class="text-blue-600 text-3xl font-bold mb-2 event-date">12 OGOS</p>
+                    <h3 class="text-2xl font-semibold mb-2 event-name text-gray-800">Netball</h3>
+                    <p class="text-gray-600 mb-2">Dewan Eksplorasi, Sekolah Tinta</p>
+                    <p class="text-gray-700 font-medium">Masa: 8:30 Pagi - 1:00 Petang</p>
+                    <span class="live-badge hidden">LIVE</span>
+                    <button class="generate-summary-btn mt-4 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full shadow-md transition-colors w-full">✨ Ringkasan Acara</button>
+                </div>
+
+                <!-- Acara Lengkap 3 -->
+                <div class="bg-white rounded-lg shadow-xl p-6 card relative">
+                    <p class="text-blue-600 text-3xl font-bold mb-2 event-date">13 OGOS</p>
+                    <h3 class="text-2xl font-semibold mb-2 event-name text-gray-800">Futsal</h3>
+                    <p class="text-gray-600 mb-2">Dewan Eksplorasi, Sekolah Tinta</p>
+                    <p class="text-gray-700 font-medium">Masa: 8:30 Pagi - 1:00 Petang</p>
+                    <span class="live-badge hidden">LIVE</span>
+                    <button class="generate-summary-btn mt-4 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full shadow-md transition-colors w-full">✨ Ringkasan Acara</button>
+                </div>
+
+                <!-- Acara Lengkap 4 -->
+                <div class="bg-white rounded-lg shadow-xl p-6 card relative">
+                    <p class="text-blue-600 text-3xl font-bold mb-2 event-date">14 OGOS</p>
+                    <h3 class="text-2xl font-semibold mb-2 event-name text-gray-800">Pickeball</h3>
+                    <p class="text-gray-600 mb-2">Dewan Eksplorasi, Sekolah Tinta</p>
+                    <p class="text-gray-700 font-medium">Masa: 8:30 Pagi - 1:00 Petang</p>
+                    <span class="live-badge hidden">LIVE</span>
+                    <button class="generate-summary-btn mt-4 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full shadow-md transition-colors w-full">✨ Ringkasan Acara</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-900 text-white py-8 px-4 mt-12 rounded-t-lg">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2025 Tinta Sports Day 2025. Hak Cipta Terpelihara.</p>
+            <div class="flex justify-center space-x-6 mt-4">
+                <a href="#" class="text-gray-400 hover:text-white transition-colors">Edited by Sir Akmal</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Butang Kembali ke Atas -->
+    <button onclick="topFunction()" id="backToTopBtn" title="Kembali ke Atas">↑</button>
+
+    <!-- Modal untuk Ringkasan Acara -->
+    <div id="summaryModal" class="modal flex">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h3 class="text-2xl font-bold text-gray-800 mb-4">Ringkasan Acara</h3>
+            <p id="summaryContent" class="text-gray-700"></p>
+            <div id="summaryLoading" class="text-center text-blue-500 mt-4 hidden">Memuatkan...</div>
+        </div>
+    </div>
+
+    <!-- Jika diasingkan, pautkan ke fail JavaScript di sini -->
+    <script src="script.js"></script>
+</body>
+</html>
